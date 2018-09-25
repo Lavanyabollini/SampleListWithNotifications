@@ -13,6 +13,9 @@
 		0F9B7859211841D4000C18E4 /* SampleList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F9B7857211841D4000C18E4 /* SampleList.xcdatamodeld */; };
 		0F9B785B211841D7000C18E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F9B785A211841D7000C18E4 /* Assets.xcassets */; };
 		0F9B785E211841D7000C18E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F9B785C211841D7000C18E4 /* LaunchScreen.storyboard */; };
+		0F9B78662118545D000C18E4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9B78652118545D000C18E4 /* ListViewController.swift */; };
+		0F9B78682118547D000C18E4 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9B78672118547D000C18E4 /* ListTableViewCell.swift */; };
+		BFD6307A212ABD770071E380 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFD63079212ABD770071E380 /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,10 @@
 		0F9B785A211841D7000C18E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F9B785D211841D7000C18E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F9B785F211841D7000C18E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F9B78652118545D000C18E4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		0F9B78672118547D000C18E4 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		BFD63079212ABD770071E380 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		BFD6307C212AE27B0071E380 /* SampleList.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SampleList.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +63,51 @@
 		0F9B784F211841D4000C18E4 /* SampleList */ = {
 			isa = PBXGroup;
 			children = (
+				BFD6307C212AE27B0071E380 /* SampleList.entitlements */,
 				0F9B7850211841D4000C18E4 /* AppDelegate.swift */,
-				0F9B7852211841D4000C18E4 /* ViewController.swift */,
-				0F9B7854211841D4000C18E4 /* Main.storyboard */,
+				0F9B786A21185BBE000C18E4 /* ViewControllers */,
+				0F9B786921185BA9000C18E4 /* Storyboard */,
 				0F9B785A211841D7000C18E4 /* Assets.xcassets */,
-				0F9B785C211841D7000C18E4 /* LaunchScreen.storyboard */,
 				0F9B785F211841D7000C18E4 /* Info.plist */,
-				0F9B7857211841D4000C18E4 /* SampleList.xcdatamodeld */,
+				0F9B786B21185BD8000C18E4 /* CoredataModel */,
 			);
 			path = SampleList;
+			sourceTree = "<group>";
+		};
+		0F9B786921185BA9000C18E4 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0F9B7854211841D4000C18E4 /* Main.storyboard */,
+				0F9B785C211841D7000C18E4 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		0F9B786A21185BBE000C18E4 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F9B7852211841D4000C18E4 /* ViewController.swift */,
+				BFD6307B212AC8BB0071E380 /* Local notification */,
+				0F9B78652118545D000C18E4 /* ListViewController.swift */,
+				0F9B78672118547D000C18E4 /* ListTableViewCell.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0F9B786B21185BD8000C18E4 /* CoredataModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F9B7857211841D4000C18E4 /* SampleList.xcdatamodeld */,
+			);
+			path = CoredataModel;
+			sourceTree = "<group>";
+		};
+		BFD6307B212AC8BB0071E380 /* Local notification */ = {
+			isa = PBXGroup;
+			children = (
+				BFD63079212ABD770071E380 /* NotificationViewController.swift */,
+			);
+			path = "Local notification";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +142,11 @@
 				TargetAttributes = {
 					0F9B784C211841D4000C18E4 = {
 						CreatedOnToolsVersion = 9.3;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -140,7 +188,10 @@
 			files = (
 				0F9B7853211841D4000C18E4 /* ViewController.swift in Sources */,
 				0F9B7851211841D4000C18E4 /* AppDelegate.swift in Sources */,
+				BFD6307A212ABD770071E380 /* NotificationViewController.swift in Sources */,
+				0F9B78662118545D000C18E4 /* ListViewController.swift in Sources */,
 				0F9B7859211841D4000C18E4 /* SampleList.xcdatamodeld in Sources */,
+				0F9B78682118547D000C18E4 /* ListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,16 +335,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SampleList/SampleList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7G38S6868;
 				INFOPLIST_FILE = SampleList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Drools.SampleList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobinius.SampleList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -301,16 +355,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SampleList/SampleList.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L7G38S6868;
 				INFOPLIST_FILE = SampleList/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Drools.SampleList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mobinius.SampleList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
